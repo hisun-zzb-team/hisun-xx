@@ -57,8 +57,8 @@
 							<a class="btn" style="color: #C0C0C0;" href="javascript:tp('3')">
 								<i class="icon-info-sign"></i>弃权
 							</a>
-							<a href="javascript:ckjg()">
-								<i class=" icon-search"></i>查看投票结果
+							<a class="btn" href="javascript:ckjg()">
+								<i class="icon-search"></i>查看投票结果
 							</a>
 							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
 						</div>
