@@ -79,7 +79,7 @@ public class ShtpController extends BaseController {
         try {
             CommonConditionQuery query = new CommonConditionQuery();
             query.add(CommonRestrictions.and(" tombstone = :tombstone", "tombstone", 0));
-            query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 2));
+            query.add(CommonRestrictions.and(" shZt <> :shZt", "shZt", 0));
             if(pcmc!=null && !pcmc.equals("")){
                 query.add(CommonRestrictions.and(" pcmc like :pcmc", "pcmc",  "%"+pcmc+ "%"));
             }
