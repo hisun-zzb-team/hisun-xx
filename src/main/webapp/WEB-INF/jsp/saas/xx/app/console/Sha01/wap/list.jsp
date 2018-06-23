@@ -48,7 +48,6 @@
 					<div class="portlet-title">
 						<div class="caption">${pchXx} 投票名单</div>
 						<div class="clearfix fr">
-							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
 							<a class="btn" style="color: #00BF35;"href="javascript:tp('1')">
 								<i class="icon-ok"></i>同意
 							</a>
@@ -61,6 +60,7 @@
 							<a href="javascript:ckjg()">
 								<i class=" icon-search"></i>查看投票结果
 							</a>
+							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
 						</div>
 					</div>
 				</form>

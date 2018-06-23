@@ -89,7 +89,6 @@
 					<div class="portlet-title">
 						<div class="caption">20180611 投票结果</div>
 						<div class="clearfix fr">
-							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
 							<a class="btn" style="color: #00BF35;"href="javascript:tp('1')">
 								<i class="icon-ok"></i>同意
 							</a>
@@ -99,6 +98,7 @@
 							<a class="btn" style="color: #C0C0C0;" href="javascript:tp('3')">
 								<i class="icon-info-sign"></i>弃权
 							</a>
+							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
 						</div>
 						<div class="clearfix">
 							<div class="control-group">
