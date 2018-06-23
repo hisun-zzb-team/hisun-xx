@@ -68,9 +68,9 @@
         <p>加分项：${shpa01Vo.jfxXx}</p>
     </div>
     <div class="mainthree" style="margin-left: 210px;margin-top: 0px">
-        <h1 class="tith1" style="margin-bottom:30px;">论文</h1>
-        <a class="btn blue" herf="javascript:void(0)" onclick="kcclDown()"><i
-                class="icon-circle-arrow-down"></i>国家动物疫病防治对策研究</a>
+        <h1 class="tith1" >论文</h1>
+        <a class="btn blue" herf="javascript:void(0)" onclick="gbrmspbDown()"><i
+                class="icon-circle-arrow-down"></i><c:out value="${shpa01Vo.lunwenXx}"></c:out></a>
     </div>
 </div>
 
@@ -365,7 +365,7 @@
     }
 
     function gbrmspbDown() {
-        window.open("${path }/xx/app/Sha01/gbrmspb/ajax/down?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&sha01Id=${shpa01Vo.id}");
+        window.open("${path }/xx/app/Sha01/gbrmspb/ajax/down?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}");
     }
     function kcclDown() {
         window.open("${path }/xx/app/Sha01/kccl/ajax/down?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&sha01Id=${shpa01Vo.id}");

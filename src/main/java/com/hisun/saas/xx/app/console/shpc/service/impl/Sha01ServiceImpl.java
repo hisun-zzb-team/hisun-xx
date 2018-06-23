@@ -72,18 +72,18 @@ public class Sha01ServiceImpl extends BaseServiceImpl<Sha01,String> implements S
             sql.append(" and XM like :xmQuery");
             paramMap.put("xmQuery", "%"+ xmQuery + "%");
         }
-        if(StringUtils.isNotBlank(noFileQuert) && !noFileQuert.equals("noselect")){
-            if(noFileQuert.equals("gbrmspb")){
-                sql.append(" and t.id not in(select gbrmspb.APP_SH_A01_ID from APP_SH_A01_GBRMSPB gbrmspb where gbrmspb.file_path <>'')");
-            }else if(noFileQuert.equals("kccl")){
-                sql.append(" and t.id not in(select kccl.APP_SH_A01_ID from APP_SH_A01_KCCL kccl where kccl.PATH<>'')");
-            }else if(noFileQuert.equals("dascqk")){
-                sql.append(" and t.id not in(select dascqk.APP_SH_A01_ID from APP_SH_A01_DASCQK dascqk where dascqk.PATH <> '')");
-            }else if(noFileQuert.equals("grzdsx")){
-                sql.append(" and t.id not in(select grzdsx.APP_SH_A01_ID from APP_SH_A01_GRZDSX grzdsx where  grzdsx.PATH <> '')");
-            }
-
-        }
+//        if(StringUtils.isNotBlank(noFileQuert) && !noFileQuert.equals("noselect")){
+//            if(noFileQuert.equals("gbrmspb")){
+//                sql.append(" and t.id not in(select gbrmspb.APP_SH_A01_ID from APP_SH_A01_GBRMSPB gbrmspb where gbrmspb.file_path <>'')");
+//            }else if(noFileQuert.equals("kccl")){
+//                sql.append(" and t.id not in(select kccl.APP_SH_A01_ID from APP_SH_A01_KCCL kccl where kccl.PATH<>'')");
+//            }else if(noFileQuert.equals("dascqk")){
+//                sql.append(" and t.id not in(select dascqk.APP_SH_A01_ID from APP_SH_A01_DASCQK dascqk where dascqk.PATH <> '')");
+//            }else if(noFileQuert.equals("grzdsx")){
+//                sql.append(" and t.id not in(select grzdsx.APP_SH_A01_ID from APP_SH_A01_GRZDSX grzdsx where  grzdsx.PATH <> '')");
+//            }
+//
+//        }
 
         paramMap.put("startNum", (pageNum-1)*pageSize);
         paramMap.put("pageSize",pageSize);
