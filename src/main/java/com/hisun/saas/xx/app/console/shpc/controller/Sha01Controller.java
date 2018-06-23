@@ -328,7 +328,7 @@ public class Sha01Controller extends BaseController {
             CommonConditionQuery query = new CommonConditionQuery();
             // query.add(CommonRestrictions.and(" shlx = :shlx", "shlx", Shpc.SHLX_BWH));
             query.add(CommonRestrictions.and(" tombstone = :tombstone", "tombstone", 0));
-            query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 2));
+            query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 1));
             CommonOrderBy orderBy = new CommonOrderBy();
             orderBy.add(CommonOrder.asc("px"));
 

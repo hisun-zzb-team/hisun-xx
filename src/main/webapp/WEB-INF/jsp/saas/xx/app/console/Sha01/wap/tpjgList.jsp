@@ -84,20 +84,12 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12 responsive">
-				<a href="javascript:history.back(-1)">
-					<div style="line-height:36px;color: #FFFFFF;">
-						<table width="100%">
-							<tbody><tr width="100%">
-								<td align="left">   〈</td>
-							</tr>
-							</tbody></table>
-					</div>
-				</a>
 				<%-- 表格开始 --%>
 				<form class=""id="importForm" enctype="multipart/form-data">
 					<div class="portlet-title">
 						<div class="caption">20180611 投票结果</div>
 						<div class="clearfix fr">
+							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
 							<a class="btn" style="color: #00BF35;"href="javascript:tp('1')">
 								<i class="icon-ok"></i>同意
 							</a>
