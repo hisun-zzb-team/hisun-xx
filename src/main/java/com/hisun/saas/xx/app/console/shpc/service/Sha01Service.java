@@ -16,6 +16,7 @@ import com.hisun.saas.xx.app.console.shpc.entity.Shpc;
 import com.hisun.saas.xx.app.console.shpc.vo.Sha01Vo;
 
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,6 +33,7 @@ public interface Sha01Service extends BaseService<Sha01,String> {
 
     void saveFromWordDataMap(Tenant tenant, Map<String, String> dataMap, String pcId);
     PagerVo<Sha01Vo> getSha01VoS(int pageSize, int pageNum, String shpcId, String xmQuery, String noFileQuert);
+    List<Map> getSha01List(String shpcId);
     String toSqliteInsertSql(Sha01 sha01);
     void matchQueryCondition(CommonConditionQuery query, String uploadMatchingMode, String split, String filename);
     void saveAsGbrmspb(Sha01 sha01)throws Exception;

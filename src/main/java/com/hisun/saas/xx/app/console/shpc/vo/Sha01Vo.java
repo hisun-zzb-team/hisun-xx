@@ -79,6 +79,13 @@ public class Sha01Vo {
 
     private String lunwenXx;
 
+    private ShtpsjVo shtpsjVo;//用于投票
+
+    private int tyNum;//同意人数
+    private int btyNum;//不同意人数
+    private int qqNum;//弃权人数
+    private int ltNum;//漏投人数
+
     public String getId() {
         return id;
     }
@@ -475,5 +482,46 @@ public class Sha01Vo {
 
     public void setLunwenXx(String lunwenXx) {
         this.lunwenXx = lunwenXx;
+    }
+
+
+    public ShtpsjVo getShtpsjVo() {
+        return shtpsjVo;
+    }
+
+    public void setShtpsjVo(ShtpsjVo shtpsjVo) {
+        this.shtpsjVo = shtpsjVo;
+    }
+
+    public int getTyNum() {
+        return tyNum;
+    }
+
+    public void setTyNum(int tyNum) {
+        this.tyNum = tyNum;
+    }
+
+    public int getBtyNum() {
+        return btyNum;
+    }
+
+    public void setBtyNum(int btyNum) {
+        this.btyNum = btyNum;
+    }
+
+    public int getQqNum() {
+        return qqNum;
+    }
+
+    public void setQqNum(int qqNum) {
+        this.qqNum = qqNum;
+    }
+
+    public int getLtNum() {
+        return ltNum;
+    }
+
+    public void setLtNum(int ltNum) {
+        this.ltNum = ltNum;
     }
 }

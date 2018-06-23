@@ -167,7 +167,18 @@ public class Sha01ServiceImpl extends BaseServiceImpl<Sha01,String> implements S
         return page;
     }
 
-
+    public List<Map> getSha01List(String shpcId){
+        //            query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 2));
+        Map<String,Object> paramMap = Maps.newHashMap();
+        StringBuilder sql = new StringBuilder(" from APP_SH_A01 t where t.tombstone=(:tombstone) and t.tenant_id=(:tenant_id) and t.APP_SH_PC_ID=:shpcId ");
+//        sql.append(" and t.sh_zt=:shZt ");
+        paramMap.put("tombstone", "0");
+        paramMap.put("shZt", "2");
+        paramMap.put("shpcId", shpcId);
+        paramMap.put("tenant_id",  UserLoginDetailsUtil.getUserLoginDetails().getTenantId());
+        List<Map> list = sha01Dao.nativeList("select t.* " + sql.toString()+ " order by t.a01_px ",paramMap);
+        return list;
+    }
 
     public void saveAsGbrmspb(Sha01 sha01)throws Exception{
         if(sha01.getGbrmspbs()!=null && sha01.getGbrmspbs().size()>0){
