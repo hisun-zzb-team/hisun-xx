@@ -73,9 +73,47 @@ public class ShpcController extends BaseController {
                              @RequestParam(value = "pageSize" ,required=false) String pageSize) throws GenericException {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
-            PagerVo<ShpcVo> pagerVo = new PagerVo<ShpcVo>(null, 10, 1, 10);
+            Session session = SecurityUtils.getSubject().getSession();
+            if(pageSize==null){
+                if(session.getAttribute("bwhpageSize")!=null){
+                    pageSize = session.getAttribute("bwhpageSize").toString();
+                }else{
+                    pageSize = "20";
+                }
+            }
+            session.setAttribute("bwhpageSize",pageSize);
+            //临时处理,将当前服务IP,端口,context写入ApiRegister
+            List<ApiRegister> apiRegisters = this.apiRegisterService.list();
+            if(apiRegisters!=null && apiRegisters.size()>0){
+                for(ApiRegister apiRegister : apiRegisters){
+                    apiRegister.setIp(req.getServerName());
+                    apiRegister.setPort(""+req.getServerPort());
+                    apiRegister.setContext(req.getContextPath());
+                    this.apiRegisterService.update(apiRegister);
+                }
+            }
+            CommonConditionQuery query = new CommonConditionQuery();
+            // query.add(CommonRestrictions.and(" shlx = :shlx", "shlx", Shpc.SHLX_BWH));
+            query.add(CommonRestrictions.and(" tombstone = :tombstone", "tombstone", 0));
+            CommonOrderBy orderBy = new CommonOrderBy();
+            orderBy.add(CommonOrder.asc("px"));
 
-            map.put("pager", pagerVo);
+            Long total = this.shpcService.count(query);
+            List<Shpc> shpcs = this.shpcService.list(query, orderBy, pageNum,
+                    Integer.parseInt(pageSize));
+            List<ShpcVo> shpcVos = new ArrayList<ShpcVo>();
+            if (shpcs != null) {// entity ==> vo
+                for (Shpc shpc : shpcs) {
+                    ShpcVo vo = new ShpcVo();
+                    BeanUtils.copyProperties(vo, shpc);
+                    vo.setPcsjValue(DateUtil.formatDateByFormat(shpc.getPcsj(),"yyyyMMdd"));
+                    vo.setA01Count(shpc.getSha01s().size());
+                    shpcVos.add(vo);
+                }
+            }
+            PagerVo<ShpcVo> pager = new PagerVo<ShpcVo>(shpcVos, total.intValue(),
+                    pageNum, Integer.parseInt(pageSize));
+            map.put("pager", pager);
         } catch (Exception e) {
             throw new GenericException(e);
         }
@@ -88,7 +126,16 @@ public class ShpcController extends BaseController {
     @RequestMapping(value = "/add")
     public ModelAndView add(@RequestParam(value = "shpcPageNum", defaultValue = "1") int shpcPageNum) throws Exception{
 
+        ShpcVo vo = new ShpcVo();
+        Integer maxPx = shpcService.getMaxPx();
+        if(maxPx != null){
+            vo.setPx(maxPx+1);
+        }else{
+            vo.setPx(1);
+        }
         Map<String, Object> map = new HashMap<String, Object>();
+        map.put("vo", vo);
+        map.put("shpcPageNum", shpcPageNum);
 
         return new ModelAndView("/saas/xx/app/console/bwh/add",map);
     }
@@ -211,9 +258,9 @@ public class ShpcController extends BaseController {
                         }
                     }
                 }
-                if (shpcVo.getSjlx().equals(Shpc.SJLX_GB)) {
-                    shpc.setFilePath("");
-                }
+//                if (shpcVo.getSjlx().equals(Shpc.SJLX_GB)) {
+//                    shpc.setFilePath("");
+//                }
                 String shpcId = id;
                 if (oldPx != newPx) {
                     this.shpcService.updatePx(oldPx, newPx);

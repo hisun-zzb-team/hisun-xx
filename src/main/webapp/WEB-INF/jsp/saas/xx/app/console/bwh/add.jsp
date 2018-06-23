@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>添加会议研究批次</title>
+<title>添加学位会批次</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -32,7 +32,7 @@
 
 							<i class="icon-reorder"></i>
 
-							<span class="hidden-480">添加会议研究批次</span>
+							<span class="hidden-480">添加学位会批次</span>
 
 						</div>
 						<div class="tools">
@@ -45,6 +45,13 @@
 						<!-- BEGIN FORM-->
 
 						<form action="" class="form-horizontal" id="form1" method="post" enctype="multipart/form-data">
+							<div id="pchXxGroup" class="control-group">
+								<label class="control-label">批次号<span class="required">*</span></label>
+								<div class="controls">
+									<input type="text" class="span6 m-wrap" name="pchXx" required maxlength="32" id="pchXx" />
+								</div>
+
+							</div>
 							<div id="pcmcGroup" class="control-group">
 								<label class="control-label">批次名称<span class="required">*</span></label>
 								<div class="controls">
@@ -52,33 +59,7 @@
 								</div>
 
 							</div>
-							<div class="control-group" id="shlxGroup">
-								<label class="control-label">上会类型<span class="required">*</span></label>
-								<div class="controls">
-									<select class="span6 m-wrap" id="shlx" name="shlx"  data-placeholder="Choose a Category" tabindex="1" required>
-										<option value="1" selected>部务会</option>
-										<option value="2" >常委会</option>
-									</select>
-								</div>
-							</div>
-							<div class="control-group" id="sjlxGroup">
-								<label class="control-label">数据类型<span class="required">*</span></label>
-								<div class="controls">
-									<select class="span6 m-wrap" id="sjlx" name="sjlx" onchange="changeFile(this)"  data-placeholder="Choose a Category" tabindex="1" required>
-										<option value="1" selected>干部名单</option>
-										<option value="2" >汇报材料</option>
-									</select>
-								</div>
-							</div>
-							<div class="control-group" id="mbGroup" style="display: block">
-								<label class="control-label">选择模板<span class="required">*</span></label>
-								<div class="controls">
-									<select class="span6 m-wrap" id="mb" name="mb"   data-placeholder="Choose a Category" tabindex="1" required>
-										<option value="湘西州模板" selected>湘西州模板</option>
-										<option value="广州模板" >广州模板</option>
-									</select>
-								</div>
-							</div>
+
 							<div id="pxGroup" class="control-group">
 								<label class="control-label">排序<span class="required">*</span></label>
 								<div class="controls">
@@ -87,7 +68,7 @@
 
 							</div>
 							<div id="pcsjValueGroup" class="control-group">
-								<label class="control-label">批次时间<span class="required">*</span></label>
+								<label class="control-label">投票时间<span class="required">*</span></label>
 								<div class="controls">
 										<input size="16" type="text" readonly=" " required style="width: 120px;" value="<%=DateUtil.formatDateByFormat(new Date(), "yyyyMMdd")%>"
 											   id="pcsjValue" name="pcsjValue" >
@@ -97,7 +78,7 @@
 
 							</div>
 							<div  id="clFileGroup" class="control-group">
-								<label id="clFilelb" class="control-label">干部名单</label>
+								<label id="clFilelb" class="control-label">投票人员名单</label>
 								<div class="controls">
 									<input type="file" class="default"  name="clFile" id="clFile" onchange="setName(this)" fileSizeLimit="20" fileType="doc,docx,DOC,DOCX"/>
 									<p class="textprompt">附件支持的格式有：'doc','docx'</p>

@@ -61,6 +61,22 @@ public class Sha01Vo {
     private int qqCount;//弃权票数
     private String dplCount;//得票率
 
+    private String xhXx;
+
+    private String zcmmXx;
+
+    private String rxsjXx;
+
+    private String xymcXx;
+
+    private String zymcXx;
+
+    private String pybXx;
+
+    private String jfxXx;
+
+    private String dsxmXx;
+
     public String getId() {
         return id;
     }
@@ -385,5 +401,69 @@ public class Sha01Vo {
 
     public void setJsbs(String jsbs) {
         this.jsbs = jsbs;
+    }
+
+    public String getXhXx() {
+        return xhXx;
+    }
+
+    public void setXhXx(String xhXx) {
+        this.xhXx = xhXx;
+    }
+
+    public String getZcmmXx() {
+        return zcmmXx;
+    }
+
+    public void setZcmmXx(String zcmmXx) {
+        this.zcmmXx = zcmmXx;
+    }
+
+    public String getRxsjXx() {
+        return rxsjXx;
+    }
+
+    public void setRxsjXx(String rxsjXx) {
+        this.rxsjXx = rxsjXx;
+    }
+
+    public String getXymcXx() {
+        return xymcXx;
+    }
+
+    public void setXymcXx(String xymcXx) {
+        this.xymcXx = xymcXx;
+    }
+
+    public String getZymcXx() {
+        return zymcXx;
+    }
+
+    public void setZymcXx(String zymcXx) {
+        this.zymcXx = zymcXx;
+    }
+
+    public String getPybXx() {
+        return pybXx;
+    }
+
+    public void setPybXx(String pybXx) {
+        this.pybXx = pybXx;
+    }
+
+    public String getJfxXx() {
+        return jfxXx;
+    }
+
+    public void setJfxXx(String jfxXx) {
+        this.jfxXx = jfxXx;
+    }
+
+    public String getDsxmXx() {
+        return dsxmXx;
+    }
+
+    public void setDsxmXx(String dsxmXx) {
+        this.dsxmXx = dsxmXx;
     }
 }

@@ -133,164 +133,183 @@
 								</tr>
 							</thead>
 							<tbody>
+							<c:forEach items="${pager.datas}" var="vo">
 								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">1</td>
-									<td title="${vo.shyj}">201803100</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">张飞</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}">学术奖励</td>
+									<td title="${vo.shyj}"><c:out value="${vo.px}"></c:out></td>
+									<td title="${vo.xhXx}"><c:out value="${vo.xhXx}"></c:out></td>
+									<td><a href="${path}/zzb/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
+									<td><c:out value="${vo.xb}"></c:out></td>
+									<td><c:out value="${vo.zcmmXx}"></c:out></td>
+									<td><c:out value="${vo.rxsjXx}"></c:out></td>
+									<td title="${vo.xymcXx}"><c:out value="${vo.xymcXx}"></c:out></td>
+									<td title="${vo.zymcXx}"><c:out value="${vo.zymcXx}"></c:out></td>
+									<td title="${vo.pybXx}"><c:out value="${vo.pybXx}"></c:out></td>
+									<td title="${vo.jfxXx}"><c:out value="${vo.jfxXx}"></c:out></td>
+
 									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">国家动物疫病防治对策研究</a></em>
+										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class="">任免审批表</a></em>
 									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
+									<td title="${vo.dsxmXx}"><c:out value="${vo.dsxmXx}"></c:out></td>
 								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">2</td>
-									<td title="${vo.shyj}">201803101</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">李某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}">学术奖励</td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">强毒株的分离鉴定与复合新城疫</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
-								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">3</td>
-									<td title="${vo.shyj}">201803102</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">刘某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}"></td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">中国与美国及欧盟兽用生物制品注册</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
-								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">4</td>
-									<td title="${vo.shyj}">201803103</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">张某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}">学术奖励</td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">奶牛诱发卵泡波重复超排的试验研究</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">张三</td>
-								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">5</td>
-									<td title="${vo.shyj}">201803104</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">萧某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}"></td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">犬冠状病毒的流行病学调查</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">张三</td>
-								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">6</td>
-									<td title="${vo.shyj}">201803105</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">萧某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}"></td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">山东鸡源致病性大肠杆菌流行病学调查</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
-								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">7</td>
-									<td title="${vo.shyj}">201803106</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">张某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}">学术奖励</td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">甘肃省规模化猪场4种病毒性繁殖障</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">张三</td>
-								</tr>
-								<tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">8</td>
-									<td title="${vo.shyj}">201803107</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">刘某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}"></td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">麻醉药在野生动物中的临床应用调查</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
-								</tr><tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">9</td>
-									<td title="${vo.shyj}">201803108</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">徐某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}">学术奖励</td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">动物致病性空肠弯曲杆菌流行分布研究</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
-								</tr><tr style="text-overflow:ellipsis;">
-									<td title="${vo.shyj}">10</td>
-									<td title="${vo.shyj}">201803109</td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">黄某</a></td>
-									<td>男</td>
-									<td>党员</td>
-									<td>20110901</td>
-									<td title="${vo.csny}">动物医学院</td>
-									<td title="${vo.csny}">兽医专业</td>
-									<td title="${vo.cjgzsj}"></td>
-									<td title="${vo.rdsj}"></td>
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">警犬犬瘟热病的流行病学调查与防治研究</a></em>
-									</td>
-									<td title="${vo.ntzpbyj}">王宇</td>
-								</tr>
+							</c:forEach>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">1</td>--%>
+									<%--<td title="${vo.shyj}">201803100</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">张飞</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}">学术奖励</td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">国家动物疫病防治对策研究</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">2</td>--%>
+									<%--<td title="${vo.shyj}">201803101</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">李某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}">学术奖励</td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">强毒株的分离鉴定与复合新城疫</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">3</td>--%>
+									<%--<td title="${vo.shyj}">201803102</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">刘某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}"></td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">中国与美国及欧盟兽用生物制品注册</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">4</td>--%>
+									<%--<td title="${vo.shyj}">201803103</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">张某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}">学术奖励</td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">奶牛诱发卵泡波重复超排的试验研究</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">张三</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">5</td>--%>
+									<%--<td title="${vo.shyj}">201803104</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">萧某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}"></td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">犬冠状病毒的流行病学调查</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">张三</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">6</td>--%>
+									<%--<td title="${vo.shyj}">201803105</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">萧某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}"></td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">山东鸡源致病性大肠杆菌流行病学调查</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">7</td>--%>
+									<%--<td title="${vo.shyj}">201803106</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">张某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}">学术奖励</td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">甘肃省规模化猪场4种病毒性繁殖障</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">张三</td>--%>
+								<%--</tr>--%>
+								<%--<tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">8</td>--%>
+									<%--<td title="${vo.shyj}">201803107</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">刘某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}"></td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">麻醉药在野生动物中的临床应用调查</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr><tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">9</td>--%>
+									<%--<td title="${vo.shyj}">201803108</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">徐某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}">学术奖励</td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">动物致病性空肠弯曲杆菌流行分布研究</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr><tr style="text-overflow:ellipsis;">--%>
+									<%--<td title="${vo.shyj}">10</td>--%>
+									<%--<td title="${vo.shyj}">201803109</td>--%>
+									<%--<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}">黄某</a></td>--%>
+									<%--<td>男</td>--%>
+									<%--<td>党员</td>--%>
+									<%--<td>20110901</td>--%>
+									<%--<td title="${vo.csny}">动物医学院</td>--%>
+									<%--<td title="${vo.csny}">兽医专业</td>--%>
+									<%--<td title="${vo.cjgzsj}"></td>--%>
+									<%--<td title="${vo.rdsj}"></td>--%>
+									<%--<td class="Left_alignment">--%>
+										<%--<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown()" class="">警犬犬瘟热病的流行病学调查与防治研究</a></em>--%>
+									<%--</td>--%>
+									<%--<td title="${vo.ntzpbyj}">王宇</td>--%>
+								<%--</tr>--%>
 
 
 

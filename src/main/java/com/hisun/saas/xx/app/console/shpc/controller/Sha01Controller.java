@@ -91,8 +91,8 @@ public class Sha01Controller extends BaseController {
             }
             session.setAttribute("Sha01pageSize",pageSize);
 
-            PagerVo<Sha01Vo> pagerVo = new PagerVo<Sha01Vo>(null, 10, 1, 10);
-            map.put("pager", pagerVo);
+            PagerVo<Sha01Vo> pager = this.sha01Service.getSha01VoS( Integer.parseInt(pageSize),pageNum,shpcId, xmQuery, noFileQuert);
+            map.put("pager", pager);
             map.put("shpcPageNum", shpcPageNum);
             map.put("shpcId", shpcId);
             map.put("xmQuery", xmQuery);

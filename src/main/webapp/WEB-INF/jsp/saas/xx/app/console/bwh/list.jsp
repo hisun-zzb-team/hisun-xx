@@ -55,33 +55,54 @@
 								<tr>
 									<th width="10%">批次号</th>
 									<th >批次名称</th>
-									<th width="10%">投票类型</th>
+									<%--<th width="10%">投票类型</th>--%>
 									<th width="10%">投票时间</th>
 									<th width="10%">投票状态</th>
 									<th width="10%">投票名单</th>
 									<th width="50">排序</th>
-									<th width="150">操作</th>
+									<th width="100">操作</th>
 								</tr>
 							</thead>
 						<tbody>
-							<tr style="text-overflow:ellipsis;">
-								<td>20180611</td>
-								<td>
-									<a href="${path}/xx/app/console/Sha01/list?shpcId=&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}">20180611学位会投票</a>
-								</td>
-								<td>学术型博士</td>
-								<td>2018.06.20</td>
-								<td>待投票</td>
-								<td>
-									<a href="${path}/xx/app/console/Sha01/list?shpcId=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">共10人</a>
-								</td>
-								<td>1</td>
-								<td class="Left_alignment">
-									<a href="${path}/xx/app/console/bwh/edit?id=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">开始投票</a>|
-									<a href="${path}/xx/app/console/bwh/edit?id=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">编辑</a>|
-									<a href="javascript:del('${vo.id }','${vo.pcmc}')" class="">删除</a>
-								</td>
-							</tr>
+							<c:forEach items="${pager.datas}" var="vo">
+								<tr style="text-overflow:ellipsis;">
+									<td><c:out value="${vo.pchXx}"></c:out></td>
+									<td>
+										<a href="${path}/xx/app/console/Sha01/list?shpcId=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}"><c:out value="${vo.pcmc}"></c:out></a>
+									</td>
+									<%--<td><c:out value="${vo.shlxValue}"></c:out></td>--%>
+									<td><c:out value="${vo.pcsjValue}"></c:out></td>
+									<td><a href="javascript:changeShZt('${vo.id}')" id="${vo.id }_shZt"><c:out value="${vo.shZtValue}"></c:out></a></td>
+									<td>
+											<a href="${path}/xx/app/console/Sha01/list?shpcId=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">共${vo.a01Count }人</a>
+									</td>
+									<td><c:out value="${vo.px}"></c:out></td>
+									<td class="Left_alignment">
+
+										<a href="${path}/xx/app/console/bwh/edit?id=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">编辑</a>|
+										<a href="javascript:del('${vo.id }','${vo.pcmc}')" class="">删除</a>
+
+									</td>
+								</tr>
+							</c:forEach>
+							<%--<tr style="text-overflow:ellipsis;">--%>
+								<%--<td>20180611</td>--%>
+								<%--<td>--%>
+									<%--<a href="${path}/xx/app/console/Sha01/list?shpcId=&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}">20180611学位会投票</a>--%>
+								<%--</td>--%>
+								<%--<td>学术型博士</td>--%>
+								<%--<td>2018.06.20</td>--%>
+								<%--<td>待投票</td>--%>
+								<%--<td>--%>
+									<%--<a href="${path}/xx/app/console/Sha01/list?shpcId=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">共10人</a>--%>
+								<%--</td>--%>
+								<%--<td>1</td>--%>
+								<%--<td class="Left_alignment">--%>
+									<%--<a href="${path}/xx/app/console/bwh/edit?id=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">开始投票</a>|--%>
+									<%--<a href="${path}/xx/app/console/bwh/edit?id=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">编辑</a>|--%>
+									<%--<a href="javascript:del('${vo.id }','${vo.pcmc}')" class="">删除</a>--%>
+								<%--</td>--%>
+							<%--</tr>--%>
 							</tbody>
 						</table>
 					    <jsp:include page="/WEB-INF/jsp/common/page.jsp">

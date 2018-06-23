@@ -33,6 +33,7 @@ public class Shpc extends TenantEntity implements Serializable{
     public static int YSH=1;
     public static int WSH=0;
 
+    private String pchXx;//批次号
 
     private String id;
 
@@ -167,4 +168,12 @@ public class Shpc extends TenantEntity implements Serializable{
         this.mb = mb;
     }
 
+    @Column(name = "pch_xx")
+    public String getPchXx() {
+        return pchXx;
+    }
+
+    public void setPchXx(String pchXx) {
+        this.pchXx = pchXx;
+    }
 }

@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>修改会议研究批次</title>
+<title>修改学位会批次</title>
 </head>
 <body>
 			<div class="container-fluid">
@@ -31,7 +31,7 @@
 
 									<i class="icon-reorder"></i>
 
-									<span class="hidden-480">修改会议研究批次</span>
+									<span class="hidden-480">修改学位会批次</span>
 
 								</div>
 								<div class="tools">
@@ -46,6 +46,13 @@
 								<form action="${path }/xx/app/console/bwh/save?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="form-horizontal" id="form1" method="post" enctype="multipart/form-data">
 									<input type="hidden" name="id" value="${shpc.id }" id="id">
 									<input type="hidden" name="filePath" value="${shpc.filePath }" id="filePath">
+									<div id="pchXxGroup" class="control-group">
+										<label class="control-label">批次号<span class="required">*</span></label>
+										<div class="controls">
+											<input type="text" class="span6 m-wrap" name="pchXx" required maxlength="32" id="pchXx"  value="${shpc.pchXx }"/>
+										</div>
+
+									</div>
 									<div id="pcmcGroup" class="control-group">
 										<label class="control-label">批次名称<span class="required">*</span></label>
 										<div class="controls">
@@ -54,39 +61,9 @@
 
 									</div>
 
-									<div class="control-group" id="shlxGroup">
 
-										<label class="control-label">上会类型<span class="required">*</span></label>
-										<div class="controls">
-											<select class="span6 m-wrap" id="shlx" name="shlx"  data-placeholder="Choose a Category" tabindex="1" required>
-												<option value="1" <c:if test="${shpc.shlx eq '1'}">selected</c:if>>部务会</option>
-												<option value="2" <c:if test="${shpc.shlx eq '2'}">selected</c:if>>常委会</option>
-											</select>
-
-										</div>
-
-									</div>
-									<div class="control-group" id="sjlxGroup">
-										<label class="control-label">数据类型<span class="required">*</span></label>
-										<div class="controls">
-											<select class="span6 m-wrap" id="sjlx" name="sjlx" onchange="changeFile(this)" data-placeholder="Choose a Category" tabindex="1" required>
-												<option value="1" <c:if test="${shpc.sjlx eq '1'}">selected</c:if>>干部名单</option>
-												<option value="2" <c:if test="${shpc.sjlx eq '2'}">selected</c:if>>汇报材料</option>
-											</select>
-										</div>
-									</div>
-									<div class="control-group" id="mbGroup" <c:if test="${shpc.sjlx eq '2'}">
-										style="display: none"</c:if>>
-										<label class="control-label">选择模板<span class="required">*</span></label>
-										<div class="controls">
-											<select class="span6 m-wrap" id="mb" name="mb"   data-placeholder="Choose a Category" tabindex="1" required>
-												<option value="湘西州模板" <c:if test="${shpc.mb eq '广州模板'}">selected</c:if>>湘西州模板</option>
-												<option value="广州模板" <c:if test="${shpc.mb eq '湖南模板'}">selected</c:if>>广州模板</option>
-											</select>
-										</div>
-									</div>
 									<div id="pcsjValueGroup" class="control-group">
-										<label class="control-label">批次时间<span class="required">*</span></label>
+										<label class="control-label">投票时间<span class="required">*</span></label>
 										<div class="controls">
 											<input size="16" type="text" readonly=" " required style="width: 120px;" value="${shpc.pcsjValue}"
 												   id="pcsjValue" name="pcsjValue" >
@@ -102,21 +79,21 @@
 										</div>
 
 									</div>
-									<div  id="clFileGroup" class="control-group" <c:if test="${shpc.sjlx eq '1'}">
-										style="visibility:hidden"</c:if>>
-										<label class="control-label">汇报主题材料</label>
-										<div class="controls">
-											<input type="file" class="default" name="clFile" id="clFile" fileSizeLimit="20" fileType="doc,docx,DOC,DOCX"/>
-											<div class="btn-group" id="gbrmspbDownDiv" <c:if test="${empty shpc.filePath}">
-												 style="visibility:hidden"</c:if>>
-												<a class="btn blue" herf="javascript:void(0)" onclick="fileDown()"><i
-														class="icon-circle-arrow-down"></i>下载文件</a>
-											</div>
-											<p class="textprompt">附件支持的格式有：'doc','docx'</p>
-											<p class="Errorred" id="attachFileError"></p>
-										</div>
+									<%--<div  id="clFileGroup" class="control-group" <c:if test="${shpc.sjlx eq '1'}">--%>
+										<%--style="visibility:hidden"</c:if>>--%>
+										<%--<label class="control-label">汇报主题材料</label>--%>
+										<%--<div class="controls">--%>
+											<%--<input type="file" class="default" name="clFile" id="clFile" fileSizeLimit="20" fileType="doc,docx,DOC,DOCX"/>--%>
+											<%--<div class="btn-group" id="gbrmspbDownDiv" <c:if test="${empty shpc.filePath}">--%>
+												 <%--style="visibility:hidden"</c:if>>--%>
+												<%--<a class="btn blue" herf="javascript:void(0)" onclick="fileDown()"><i--%>
+														<%--class="icon-circle-arrow-down"></i>下载文件</a>--%>
+											<%--</div>--%>
+											<%--<p class="textprompt">附件支持的格式有：'doc','docx'</p>--%>
+											<%--<p class="Errorred" id="attachFileError"></p>--%>
+										<%--</div>--%>
 
-									</div>
+									<%--</div>--%>
 									<div class="control-group">
 										<div class="controls mt10">
 											<button class="btn green" type="button" style="padding:7px 20px;" onclick="formSubmit()">确定</button>
@@ -188,15 +165,7 @@
 		if(!bool){
 			return;
 		}
-		var fileInput = document.getElementById("clFile");
-		if (fileInput.files.length > 0) {
-			var name = fileInput.files[0].name
-			var arr = name.split(".");
-			if (arr.length < 2 || !(arr[arr.length - 1] == "doc" || arr[arr.length - 1] == "docx" || arr[arr.length - 1] == "DOC" || arr[arr.length - 1] == "DOCX")) {
-				showTip("提示", "请上传word文件", 2000);
-				return;
-			}
-		}
+
 		myLoading.show();
 		$("#form1").ajaxSubmit({
 			url : "${path }/xx/app/console/bwh/save",

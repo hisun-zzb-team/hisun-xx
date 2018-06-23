@@ -63,6 +63,22 @@ public class Sha01 extends TenantEntity implements Serializable {
 
     private String jsbs;
 
+    private String xhXx;
+
+    private String zcmmXx;
+
+    private String rxsjXx;
+
+    private String xymcXx;
+
+    private String zymcXx;
+
+    private String pybXx;
+
+    private String jfxXx;
+
+    private String dsxmXx;
+
 
     private List<Sha01dascqk> dascqks;
 
@@ -345,5 +361,69 @@ public class Sha01 extends TenantEntity implements Serializable {
         }
         sha01gzjl.setSha01(this);
         this.gzjls.add(sha01gzjl);
+    }
+    @Column(name = "xh_xx", length = 256)
+    public String getXhXx() {
+        return xhXx;
+    }
+
+    public void setXhXx(String xhXx) {
+        this.xhXx = xhXx;
+    }
+    @Column(name = "zcmm_xx", length = 256)
+    public String getZcmmXx() {
+        return zcmmXx;
+    }
+
+    public void setZcmmXx(String zcmmXx) {
+        this.zcmmXx = zcmmXx;
+    }
+    @Column(name = "rxsj_xx", length = 256)
+    public String getRxsjXx() {
+        return rxsjXx;
+    }
+
+    public void setRxsjXx(String rxsjXx) {
+        this.rxsjXx = rxsjXx;
+    }
+    @Column(name = "xymc_xx", length = 256)
+    public String getXymcXx() {
+        return xymcXx;
+    }
+
+    public void setXymcXx(String xymcXx) {
+        this.xymcXx = xymcXx;
+    }
+    @Column(name = "zymc_xx", length = 256)
+    public String getZymcXx() {
+        return zymcXx;
+    }
+
+    public void setZymcXx(String zymcXx) {
+        this.zymcXx = zymcXx;
+    }
+    @Column(name = "pyb_xx", length = 256)
+    public String getPybXx() {
+        return pybXx;
+    }
+
+    public void setPybXx(String pybXx) {
+        this.pybXx = pybXx;
+    }
+    @Column(name = "jfx_xx", length = 256)
+    public String getJfxXx() {
+        return jfxXx;
+    }
+
+    public void setJfxXx(String jfxXx) {
+        this.jfxXx = jfxXx;
+    }
+    @Column(name = "dsxm_xx", length = 256)
+    public String getDsxmXx() {
+        return dsxmXx;
+    }
+
+    public void setDsxmXx(String dsxmXx) {
+        this.dsxmXx = dsxmXx;
     }
 }

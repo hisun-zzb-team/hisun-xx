@@ -40,6 +40,7 @@ public class ShpcVo extends TenantEntityVo {
     private String sjlxValue;
     private int px;
     private String mb;
+    private String pchXx;//批次号
     public int getPx() {
         return px;
     }
@@ -147,9 +148,9 @@ public class ShpcVo extends TenantEntityVo {
     }
     public String getShZtValue(){
         if(this.shZt==0){
-            return "未上会";
+            return "未投票";
         }else if(this.shZt==1){
-            return "已上会";
+            return "已开启投票";
         }
         return "";
     }
@@ -192,4 +193,12 @@ public class ShpcVo extends TenantEntityVo {
 //    public void setClFile(MultipartFile clFile) {
 //        this.clFile = clFile;
 //    }
+
+    public String getPchXx() {
+        return pchXx;
+    }
+
+    public void setPchXx(String pchXx) {
+        this.pchXx = pchXx;
+    }
 }
