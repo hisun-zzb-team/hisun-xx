@@ -93,6 +93,8 @@ public class ShtpsjController extends BaseController {
             map.put("shtpId", shtpId);
             map.put("shpcId", shpcId);
             map.put("tpqbh", tpqbh);
+            map.put("tprxm", tprxm);
+
             map.put("tpyj", tpyj);
         } catch (Exception e) {
             throw new GenericException(e);

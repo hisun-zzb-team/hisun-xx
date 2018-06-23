@@ -105,7 +105,7 @@
 								<input type="hidden" name="OWASP_CSRFTOKEN" value="${sessionScope.OWASP_CSRFTOKEN}"/>
 								<input type="hidden" name="pageNum" value="${pager.pageNum }" id="pageNum">
 								<input type="hidden" name="pageSize" value="${pager.pageSize }" id="pageSize">
-								学号：<input type="text" class="m-wrap" name="xmQuery" id="xmQuery" value="${xmQuery}" style="width: 100px;" />
+								学号：<input type="text" class="m-wrap" name="xhQuery" id="xhQuery" value="${xhQuery}" style="width: 100px;" />
 								姓名：<input type="text" class="m-wrap" name="xmQuery" id="xmQuery" value="${xmQuery}" style="width: 100px;" />
 								<button type="button" class="btn Short_but" onclick="searchSubmit()">查询</button>
 								<button type="button" class="btn Short_but" onclick="clearData()">清空</button>
@@ -147,7 +147,7 @@
 									<td title="${vo.jfxXx}"><c:out value="${vo.jfxXx}"></c:out></td>
 
 									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
+										<a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a>
 									</td>
 									<td title="${vo.dsxmXx}"><c:out value="${vo.dsxmXx}"></c:out></td>
 								</tr>

@@ -69,7 +69,7 @@ public class ShtpController extends BaseController {
     private ShtpsjService shtpsjService;
 
     @RequestMapping("/")
-    public ModelAndView list(HttpServletRequest req, String pcmc,
+    public ModelAndView list(HttpServletRequest req, String pcmc,String pch,
                              @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
                              @RequestParam(value = "pageSize", defaultValue = "20") int pageSize) throws GenericException {
         Map<String, Object> map = new HashMap<String, Object>();
@@ -79,6 +79,9 @@ public class ShtpController extends BaseController {
             query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 2));
             if(pcmc!=null && !pcmc.equals("")){
                 query.add(CommonRestrictions.and(" pcmc like :pcmc", "pcmc",  "%"+pcmc+ "%"));
+            }
+            if(pch!=null && !pch.equals("")){
+                query.add(CommonRestrictions.and(" pchXx like :pch", "pch",  "%"+pch+ "%"));
             }
             CommonOrderBy orderBy = new CommonOrderBy();
             orderBy.add(CommonOrder.asc("px"));
@@ -99,6 +102,7 @@ public class ShtpController extends BaseController {
                     pageNum, pageSize);
             map.put("pager", pager);
             map.put("pcmc", pcmc);
+            map.put("pch", pch);
         } catch (Exception e) {
             throw new GenericException(e);
         }

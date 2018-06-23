@@ -41,6 +41,7 @@
 							<input type="hidden" name="OWASP_CSRFTOKEN" value="${sessionScope.OWASP_CSRFTOKEN}"/>
 							<input type="hidden" name="pageNum" value="${pager.pageNum }" id="pageNum">
 							<input type="hidden" name="pageSize" value="${pager.pageSize }" id="pageSize">
+								批次号：<input type="text" class="m-wrap" name="pch" id="pch" value="${pch}" style="width: 100px;" />
 							批次名称：<input type="text" class="m-wrap" name="pcmc" id="pcmc" value="${pcmc}" style="width: 100px;" />
 							<button type="button" class="btn Short_but" onclick="searchSubmit()">查询</button>
 							<button type="button" class="btn Short_but" onclick="clearData()">清空</button>
@@ -105,6 +106,8 @@
 
 		function clearData(){
 			$("#pcmc").val('');
+            $("#pch").val('');
+
 			document.searchForm.submit();
 		}
 
