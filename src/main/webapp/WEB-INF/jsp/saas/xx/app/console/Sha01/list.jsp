@@ -139,7 +139,7 @@
 									<td title="${vo.xhXx}"><c:out value="${vo.xhXx}"></c:out></td>
 									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
 									<td><c:out value="${vo.xb}"></c:out></td>
-									<td><c:out value="${vo.zcmmXx}"></c:out></td>
+									<td><c:out value="${vo.zzmmXx}"></c:out></td>
 									<td><c:out value="${vo.rxsjXx}"></c:out></td>
 									<td title="${vo.xymcXx}"><c:out value="${vo.xymcXx}"></c:out></td>
 									<td title="${vo.zymcXx}"><c:out value="${vo.zymcXx}"></c:out></td>
