@@ -102,11 +102,30 @@
 						</div>
 						<div class="clearfix">
 							<div class="control-group">
-								<div id="query" style="float: left;">
-									<input onclick="search('1')" type="button" value="同意"/><c:out value="${tyNum}名"></c:out>
-									<input onclick="search('2')" type="button" value="不同意"/><c:out value="${btyNum}名"></c:out>
-									<input onclick="search('3')" type="button" value="弃权"/><c:out value="${qqNum}名"></c:out>
-									<input onclick="search('4')" type="button" value="漏投"/><c:out value="${ltNum}名"></c:out>
+								<div id="query" style="float: left;width: 330px;margin-left: 100px;">
+									<div class="span3" style="margin-left: 5px;" onclick="search('1')">
+										<div class="Round_01" style="width: 65px;height: 65px;line-height: 65px;font-size: 13px;background-color: #00BF35;">同意(${tyNum})
+
+										</div>
+										<%--<h4 class="Statist_h4" >${tyNum}</h4>--%>
+									</div>
+									<div class="span3" style="margin-left: 5px;" onclick="search('2')">
+										<div class="Round_02" style="width: 65px;height: 65px;line-height: 65px;font-size: 12px;background-color: #FF0000;">不同意(${btyNum})
+
+										</div>
+										<%--<h4 class="Statist_h4">${btyNum}</h4>--%>
+									</div>
+									<div class="span3" style="margin-left: 5px;" onclick="search('3')">
+										<div class="Round_03" style="width: 65px;height: 65px;line-height: 65px;font-size: 13px;background-color: #C0C0C0;">弃权(${qqNum})
+
+										</div>
+										<%--<h4 class="Statist_h4">${qqNum}</h4>--%>
+									</div>
+									<div class="span3" style="margin-left: 5px;" onclick="search('4')">
+										<div class="Round_04" style="width: 65px;height: 65px;line-height: 65px;font-size: 13px;background-color: #444444;">漏投(${ltNum})
+										</div>
+										<%--<h4 class="Statist_h4">${ltNum}</h4>--%>
+									</div>
 								</div>
 							</div>
 						</div>
