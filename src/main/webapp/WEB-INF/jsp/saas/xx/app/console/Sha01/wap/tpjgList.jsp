@@ -103,10 +103,10 @@
 						<div class="clearfix">
 							<div class="control-group">
 								<div id="query" style="float: left;">
-									<input onclick="search('1')" type="button" value="同意"/><c:out value="${tyNum}">${tyNum}</c:out>
-									<input onclick="search('2')" type="button" value="不同意"/><c:out value="${btyNum}">${btyNum}</c:out>
-									<input onclick="search('3')" type="button" value="弃权"/><c:out value="${qqNum}">${qqNum}</c:out>
-									<input onclick="search('4')" type="button" value="漏投"/><c:out value="${ltNum}">${ltNum}</c:out>
+									<input onclick="search('1')" type="button" value="同意"/><c:out value="${tyNum}名"></c:out>
+									<input onclick="search('2')" type="button" value="不同意"/><c:out value="${btyNum}名"></c:out>
+									<input onclick="search('3')" type="button" value="弃权"/><c:out value="${qqNum}名"></c:out>
+									<input onclick="search('4')" type="button" value="漏投"/><c:out value="${ltNum}名"></c:out>
 								</div>
 							</div>
 						</div>
