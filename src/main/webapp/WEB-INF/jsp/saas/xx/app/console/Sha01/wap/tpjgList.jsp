@@ -98,13 +98,13 @@
 					<div class="portlet-title">
 						<div class="caption">20180611 投票结果</div>
 						<div class="clearfix fr">
-							<a class="btn green" style="color: #00BF35;"href="javascript:tp('1')">
+							<a class="btn" style="color: #00BF35;"href="javascript:tp('1')">
 								<i class="icon-ok"></i>同意
 							</a>
-							<a class="btn pink" style="color: #FF0000;" href="javascript:tp('2')">
+							<a class="btn" style="color: #FF0000;" href="javascript:tp('2')">
 								<i class="icon-remove"></i>不同意
 							</a>
-							<a class="btn gray" style="color: #C0C0C0;" href="javascript:tp('3')">
+							<a class="btn" style="color: #C0C0C0;" href="javascript:tp('3')">
 								<i class="icon-info-sign"></i>弃权
 							</a>
 						</div>
@@ -143,19 +143,19 @@
 						<table class="table table-striped table-bordered table-hover dataTable table-set">
 							<thead>
 								<tr>
-									<th width="25">序号</th>
-									<th width="70">学号</th>
-									<th width="50">姓名</th>
-									<th width="30">性别</th>
-									<th width="50">政治面貌</th>
-									<th width="80">入学年月</th>
-									<th width="120">学院名称</th>
-									<th width="80">专业名称</th>
-									<th width="60">培养表</th>
-									<th width="90">加分项</th>
-									<th width="90">毕业论文</th>
-									<th width="50">导师姓名</th>
-									<th width="50">选择投票</th>
+									<th width="3%">序号</th>
+									<th width="6%">学号</th>
+									<th width="5%">姓名</th>
+									<th width="3%">性别</th>
+									<th width="5%">政治面貌</th>
+									<th width="6%">入学年月</th>
+									<th width="10%">学院名称</th>
+									<th width="6%">专业名称</th>
+									<th width="5%">培养表</th>
+									<th width="7%">加分项</th>
+									<th width="7%">毕业论文</th>
+									<th width="5%">导师姓名</th>
+									<th width="5%">选择投票</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -175,7 +175,7 @@
 											<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
 											<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
 											<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
-										<a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
+										<c:out value="${vo.xm}"></c:out></td>
 									<td
 											<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
 											<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
@@ -216,7 +216,7 @@
 										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
 										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
 										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
-									<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
+									<c:out value="${vo.lunwenXx}"></c:out>
 									</td>
 									<td title="${vo.dsxmXx}"
 										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>

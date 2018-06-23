@@ -45,7 +45,7 @@
 						<table class="table table-striped table-bordered table-hover dataTable table-set">
 							<thead>
 								<tr>
-									<th width="50">排序</th>
+									<th width="5%">排序</th>
 									<th width="10%">批次号</th>
 									<th >批次名称</th>
 								<%--<th width="10%">投票类型</th>--%>
