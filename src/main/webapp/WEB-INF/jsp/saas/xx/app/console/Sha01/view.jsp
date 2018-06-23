@@ -14,7 +14,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>“张飞”个人信息</title>
+    <title>“${shpa01Vo.xm}”个人信息</title>
 
     <link rel="stylesheet" type="text/css" href="${path }/css/style-metro.css">
     <link rel="stylesheet" type="text/css" href="${path }/css/bootstrap-fileupload.css">
@@ -53,104 +53,24 @@
             <a class="btn" href="${path }/xx/app/console/Sha01/list?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&shpcId=${shpcId}&shpcPageNum=${shpcPageNum}&pageNum=${a01PageNum}"><i class="icon-undo"></i>返回</a>
         </div>
         <div class="mainoneright">
-            <div class="gerenintrodu"><span>姓名：</span>张飞</div>
-            <div class="gerenintrodu"><span>学号：</span>201803100</div>
-            <div class="gerenintrodu"><span>性别：</span>男</div>
-            <div class="gerenintrodu"><span>政治面貌：</span>党员</div>
+            <div class="gerenintrodu"><span>姓名：</span>${shpa01Vo.xm}</div>
+            <div class="gerenintrodu"><span>学号：</span>${shpa01Vo.xhXx}</div>
+            <div class="gerenintrodu"><span>性别：</span>${shpa01Vo.xb}</div>
+            <div class="gerenintrodu"><span>政治面貌：</span>${shpa01Vo.zcmmXx}</div>
+            <div class="gerenintrodu"><span>入学年月：</span>${shpa01Vo.rxsjXx}</div>
         </div>
     </div>
-    <div class="maintwo">
+    <div class="maintwo" style="margin-left: 210px;margin-top: 0px">
         <h1 class="tith1">院校及专业</h1>
-        <p>学院名称：动物医学院</p>
-        <p>专业名称：	兽医专业</p>
-        <p>培养表：</p>
-        <p>加分项：学术奖励</p>
+        <p>学院名称：${shpa01Vo.xymcXx}</p>
+        <p>专业名称：	${shpa01Vo.zymcXx}</p>
+        <p>培养表：${shpa01Vo.pybXx}</p>
+        <p>加分项：${shpa01Vo.jfxXx}</p>
     </div>
-    <div class="mainthree">
+    <div class="mainthree" style="margin-left: 210px;margin-top: 0px">
         <h1 class="tith1" style="margin-bottom:30px;">论文</h1>
-
-        <form class="form-horizontal" id="importForm" enctype="multipart/form-data">
-            <div class="control-group">
-                <label class="control-label">干部任免审批表</label>
-
-                <div class="controls">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                       <span class="btn btn-file">
-                        <span class="fileupload-new">点击上传</span>
-                        <input type="file" class="default" name="gbrmspbFile" id="btn-gbrmspb"/>
-                        </span>
-                        <div class="btn-group" id="gbrmspbDownDiv"
-                             <c:if test="${!isHavagbrmspbFile }">style="visibility:hidden"</c:if>>
-                            <a class="btn blue" herf="javascript:void(0)" onclick="gbrmspbDown()"><i
-                                    class="icon-circle-arrow-down"></i>下载文件</a>
-                        </div>
-                        <%--<a herf="javascript:void(0)" onclick="gbrmspbDelete()" class="close fileupload-exists" data-dismiss="fileupload" style="float: none"></a>--%>
-                    </div>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">考察材料</label>
-
-                <div class="controls">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                       <span class="btn btn-file">
-                        <span class="fileupload-new">点击上传</span>
-                        <input type="file" class="default" name="kcclFile" id="btn-kccl"/>
-                        </span>
-                        <div class="btn-group" id="kcclDownDiv"
-                             <c:if test="${!isHavakcclFile }">style="visibility:hidden"</c:if>>
-                            <a class="btn blue" herf="javascript:void(0)" onclick="kcclDown()"><i
-                                    class="icon-circle-arrow-down"></i>下载文件</a>
-                        </div>
-                        <%--<a herf="javascript:void(0)" onclick="kcclDelete()" class="close fileupload-exists" data-dismiss="fileupload" style="float: none"></a>--%>
-
-
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">档案审查情况</label>
-
-                <div class="controls">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                       <span class="btn btn-file">
-                        <span class="fileupload-new">点击上传</span>
-                        <input type="file" class="default" name="dascqkFile" id="btn-dascqk"/></span>
-                        <div class="btn-group" id="dascqkDownDiv"
-                            <c:if test="${!isHavaDascqkFile }">style="visibility:hidden"</c:if>>
-                            <a class="btn blue" herf="javascript:void(0)" onclick="dascqkDown()"><i
-                                    class="icon-circle-arrow-down"></i>下载文件</a>
-                            <div class="btn-group" id="dabzAddbtnDiv" <c:if test="${fn:length(dascqkTipe)>0}">style="display:none"</c:if>>
-                                <a class="btn"  id="btn-dabzAdd" herf="javascript:void(0)">添加备注</a>
-                            </div>
-                        </div>
-                        <a herf="javascript:void(0)" onclick="dabzUpdate()" <c:if test="${fn:length(dascqkTipe)==0}">style="display:none"</c:if> class="showdabzcss" id='dabzshowspan' title="${dascqkTipe}">${dascqkTipe}</a>
-                        <a herf="javascript:void(0)" title="删除备注" id="dabzDelete" onclick="dabzDelete()"  class="close fileupload-exists" style="float: none; <c:if test="${fn:length(dascqkTipe)>0}">display:inline-block</c:if>"></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">个人重大事项</label>
-
-                <div class="controls">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                        <span class="btn btn-file">
-                        <span class="fileupload-new">点击上传</span>
-                        <input type="file" class="default" name="grzdsxFile" id="btn-grzdsx"/>
-                        </span>
-                        <div class="btn-group" id="grzdsxDownDiv"
-                             <c:if test="${!isHavaGrzdsxFile }">style="visibility:hidden"</c:if>>
-                            <a class="btn blue" herf="javascript:void(0)" onclick="grzdsxDown()"><i
-                                    class="icon-circle-arrow-down"></i>下载文件</a>
-                        </div>
-                        <%--<a herf="javascript:void(0)" onclick="grzdsxDelete()" class="close fileupload-exists" data-dismiss="fileupload" style="float: none"></a>--%>
-                    </div>
-                </div>
-            </div>
-        </form>
+        <a class="btn blue" herf="javascript:void(0)" onclick="kcclDown()"><i
+                class="icon-circle-arrow-down"></i>国家动物疫病防治对策研究</a>
     </div>
 </div>
 

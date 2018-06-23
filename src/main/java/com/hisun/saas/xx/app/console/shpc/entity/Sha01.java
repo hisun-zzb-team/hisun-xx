@@ -65,7 +65,7 @@ public class Sha01 extends TenantEntity implements Serializable {
 
     private String xhXx;
 
-    private String zcmmXx;
+    private String zzmmXx;
 
     private String rxsjXx;
 
@@ -78,6 +78,8 @@ public class Sha01 extends TenantEntity implements Serializable {
     private String jfxXx;
 
     private String dsxmXx;
+
+    private String lunwenXx;
 
 
     private List<Sha01dascqk> dascqks;
@@ -370,13 +372,13 @@ public class Sha01 extends TenantEntity implements Serializable {
     public void setXhXx(String xhXx) {
         this.xhXx = xhXx;
     }
-    @Column(name = "zcmm_xx", length = 256)
-    public String getZcmmXx() {
-        return zcmmXx;
+    @Column(name = "zzmm_xx", length = 256)
+    public String getZzmmXx() {
+        return zzmmXx;
     }
 
-    public void setZcmmXx(String zcmmXx) {
-        this.zcmmXx = zcmmXx;
+    public void setZzmmXx(String zzmmXx) {
+        this.zzmmXx = zzmmXx;
     }
     @Column(name = "rxsj_xx", length = 256)
     public String getRxsjXx() {
@@ -425,5 +427,13 @@ public class Sha01 extends TenantEntity implements Serializable {
 
     public void setDsxmXx(String dsxmXx) {
         this.dsxmXx = dsxmXx;
+    }
+    @Column(name = "lunwen_xx", length = 256)
+    public String getLunwenXx() {
+        return lunwenXx;
+    }
+
+    public void setLunwenXx(String lunwenXx) {
+        this.lunwenXx = lunwenXx;
     }
 }

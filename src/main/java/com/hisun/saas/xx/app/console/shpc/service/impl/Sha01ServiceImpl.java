@@ -116,6 +116,17 @@ public class Sha01ServiceImpl extends BaseServiceImpl<Sha01,String> implements S
             sha01Vo.setXgzdwjzw(map.get("xgzdwjzw")==null ?"":map.get("xgzdwjzw").toString());
             sha01Vo.setPx(Integer.parseInt(map.get("a01_px").toString()));
             sha01Vo.setZppath(map.get("ZP_PATH")==null ?"":map.get("ZP_PATH").toString());
+
+
+            sha01Vo.setXhXx(map.get("xh_xx")==null ?"":map.get("xh_xx").toString());;
+             sha01Vo.setZzmmXx(map.get("zzmm_xx")==null ?"":map.get("zzmm_xx").toString());;
+             sha01Vo.setRxsjXx(map.get("rxsj_xx")==null ?"":map.get("rxsj_xx").toString());;
+             sha01Vo.setXymcXx(map.get("xymc_xx")==null ?"":map.get("xymc_xx").toString());;
+             sha01Vo.setZymcXx(map.get("zymc_xx")==null ?"":map.get("zymc_xx").toString());;
+             sha01Vo.setPybXx(map.get("pyb_xx")==null ?"":map.get("pyb_xx").toString());;
+             sha01Vo.setJfxXx(map.get("jfx_xx")==null ?"":map.get("jfx_xx").toString());;
+             sha01Vo.setDsxmXx(map.get("dsxm_xx")==null ?"":map.get("dsxm_xx").toString());;
+             sha01Vo.setLunwenXx(map.get("lunwen_xx")==null ?"":map.get("lunwen_xx").toString());;
             sha01VoList.add(sha01Vo);
         }
 

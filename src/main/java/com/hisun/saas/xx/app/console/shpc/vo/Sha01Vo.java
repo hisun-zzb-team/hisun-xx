@@ -63,7 +63,7 @@ public class Sha01Vo {
 
     private String xhXx;
 
-    private String zcmmXx;
+    private String zzmmXx;
 
     private String rxsjXx;
 
@@ -76,6 +76,8 @@ public class Sha01Vo {
     private String jfxXx;
 
     private String dsxmXx;
+
+    private String lunwenXx;
 
     public String getId() {
         return id;
@@ -411,12 +413,12 @@ public class Sha01Vo {
         this.xhXx = xhXx;
     }
 
-    public String getZcmmXx() {
-        return zcmmXx;
+    public String getZzmmXx() {
+        return zzmmXx;
     }
 
-    public void setZcmmXx(String zcmmXx) {
-        this.zcmmXx = zcmmXx;
+    public void setZzmmXx(String zzmmXx) {
+        this.zzmmXx = zzmmXx;
     }
 
     public String getRxsjXx() {
@@ -465,5 +467,13 @@ public class Sha01Vo {
 
     public void setDsxmXx(String dsxmXx) {
         this.dsxmXx = dsxmXx;
+    }
+
+    public String getLunwenXx() {
+        return lunwenXx;
+    }
+
+    public void setLunwenXx(String lunwenXx) {
+        this.lunwenXx = lunwenXx;
     }
 }

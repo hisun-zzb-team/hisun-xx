@@ -241,10 +241,29 @@ public class Sha01Controller extends BaseController {
      */
 //    @RequiresPermissions("admin-assetStatus:edit")
     @RequestMapping(value = "/view")
-    public ModelAndView view(@RequestParam(value = "shpcPageNum", defaultValue = "1") int shpcPageNum,
+    public ModelAndView view(@RequestParam(value="id")String id,@RequestParam(value = "shpcPageNum", defaultValue = "1") int shpcPageNum,
                              @RequestParam(value = "a01PageNum", defaultValue = "1") int a01PageNum) {
         Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            Sha01 sha01 = this.sha01Service.getByPK(id);
+            Sha01Vo shpa01Vo = new Sha01Vo();
 
+            if (sha01 == null) {
+                logger.error("数据不存在");
+                throw new GenericException("数据不存在");
+            }
+
+            BeanUtils.copyProperties(shpa01Vo, sha01);
+
+            map.put("shpa01Vo", shpa01Vo);
+            map.put("shpcId", sha01.getShpc().getId());
+            map.put("shpcPageNum", shpcPageNum);
+            map.put("a01PageNum", a01PageNum);
+        }catch(Exception e){
+            map.put("success", false);
+            map.put("msg", "查看失败！");
+            throw new GenericException(e);
+        }
         return new ModelAndView("/saas/xx/app/console/Sha01/view", map);
     }
     @RequestMapping(value = "/delete/{id}")

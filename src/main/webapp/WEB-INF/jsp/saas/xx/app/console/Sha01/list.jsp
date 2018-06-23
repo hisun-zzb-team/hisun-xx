@@ -137,7 +137,7 @@
 								<tr style="text-overflow:ellipsis;">
 									<td title="${vo.shyj}"><c:out value="${vo.px}"></c:out></td>
 									<td title="${vo.xhXx}"><c:out value="${vo.xhXx}"></c:out></td>
-									<td><a href="${path}/zzb/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
+									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
 									<td><c:out value="${vo.xb}"></c:out></td>
 									<td><c:out value="${vo.zcmmXx}"></c:out></td>
 									<td><c:out value="${vo.rxsjXx}"></c:out></td>
@@ -147,7 +147,7 @@
 									<td title="${vo.jfxXx}"><c:out value="${vo.jfxXx}"></c:out></td>
 
 									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class="">任免审批表</a></em>
+										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
 									</td>
 									<td title="${vo.dsxmXx}"><c:out value="${vo.dsxmXx}"></c:out></td>
 								</tr>
