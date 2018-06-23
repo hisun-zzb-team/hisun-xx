@@ -372,6 +372,7 @@ public class Sha01 extends TenantEntity implements Serializable {
     public void setXhXx(String xhXx) {
         this.xhXx = xhXx;
     }
+
     @Column(name = "zzmm_xx", length = 256)
     public String getZzmmXx() {
         return zzmmXx;
@@ -380,6 +381,7 @@ public class Sha01 extends TenantEntity implements Serializable {
     public void setZzmmXx(String zzmmXx) {
         this.zzmmXx = zzmmXx;
     }
+
     @Column(name = "rxsj_xx", length = 256)
     public String getRxsjXx() {
         return rxsjXx;

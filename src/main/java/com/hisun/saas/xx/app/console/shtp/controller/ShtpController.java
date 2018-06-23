@@ -76,7 +76,7 @@ public class ShtpController extends BaseController {
         try {
             CommonConditionQuery query = new CommonConditionQuery();
             query.add(CommonRestrictions.and(" tombstone = :tombstone", "tombstone", 0));
-            query.add(CommonRestrictions.and(" sjlx = :sjlx", "sjlx", Shpc.SJLX_GB));
+            query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 2));
             if(pcmc!=null && !pcmc.equals("")){
                 query.add(CommonRestrictions.and(" pcmc like :pcmc", "pcmc",  "%"+pcmc+ "%"));
             }
@@ -157,8 +157,7 @@ public class ShtpController extends BaseController {
 
             //取得当前批次下的人员列表
             Long total = this.sha01Service.count(query);
-            List<Sha01> sha01s = this.sha01Service.list(query,orderBy, pageNum,
-                    pageSize);
+            List<Sha01> sha01s = this.sha01Service.list(query,orderBy);
             List<Sha01Vo> sha01Vos = new ArrayList<Sha01Vo>();
             //查询该批次下的投票数据
             query = new CommonConditionQuery();
@@ -204,9 +203,9 @@ public class ShtpController extends BaseController {
                     sha01Vos.add(vo);
                 }
             }
-            PagerVo<Sha01Vo> pager = new PagerVo<Sha01Vo>(sha01Vos, total.intValue(),
-                    pageNum, pageSize);
-            map.put("pager", pager);
+//            PagerVo<Sha01Vo> pager = new PagerVo<Sha01Vo>(sha01Vos, total.intValue(),
+//                    pageNum, pageSize);
+            map.put("pager", sha01Vos);
             map.put("shpcId", shpcId);
             map.put("shpcmc", shpcmc);
         } catch (Exception e) {

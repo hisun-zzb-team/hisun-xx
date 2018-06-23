@@ -56,12 +56,12 @@
             <div class="gerenintrodu"><span>姓名：</span>${shpa01Vo.xm}</div>
             <div class="gerenintrodu"><span>学号：</span>${shpa01Vo.xhXx}</div>
             <div class="gerenintrodu"><span>性别：</span>${shpa01Vo.xb}</div>
-            <div class="gerenintrodu"><span>政治面貌：</span>${shpa01Vo.zcmmXx}</div>
-            <div class="gerenintrodu"><span>入学年月：</span>${shpa01Vo.rxsjXx}</div>
+            <div class="gerenintrodu"><span>政治面貌：</span>${shpa01Vo.zzmmXx}</div>
         </div>
     </div>
     <div class="maintwo" style="margin-left: 210px;margin-top: 0px">
         <h1 class="tith1">院校及专业</h1>
+        <p>入学年月：${shpa01Vo.rxsjXx}</p>
         <p>学院名称：${shpa01Vo.xymcXx}</p>
         <p>专业名称：	${shpa01Vo.zymcXx}</p>
         <p>培养表：${shpa01Vo.pybXx}</p>

@@ -46,7 +46,7 @@ public class Sha01kcclController extends BaseController {
     @Autowired
     private Sha01kcclService sha01kcclService;
 
-    @Value("${upload.absolute.path}")
+    @Value("${sys.upload.absolute.path}")
     private String uploadAbsolutePath;
 
     @RequestMapping(value="/ajax/uploadFile")

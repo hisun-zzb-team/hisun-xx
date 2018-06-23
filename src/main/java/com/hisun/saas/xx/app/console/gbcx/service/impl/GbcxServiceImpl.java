@@ -34,7 +34,7 @@ import java.util.List;
 public class GbcxServiceImpl implements GbcxService {
 
 
-    @Value("${upload.absolute.path}")
+    @Value("${sys.upload.absolute.path}")
     private String uploadAbsolutePath;
 
     @Resource

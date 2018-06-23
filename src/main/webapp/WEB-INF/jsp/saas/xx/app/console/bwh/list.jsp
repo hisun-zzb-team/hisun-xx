@@ -72,9 +72,16 @@
 									</td>
 									<%--<td><c:out value="${vo.shlxValue}"></c:out></td>--%>
 									<td><c:out value="${vo.pcsjValue}"></c:out></td>
-									<td><a href="javascript:changeShZt('${vo.id}')" id="${vo.id }_shZt"><c:out value="${vo.shZtValue}"></c:out></a></td>
+									<td id="${vo.id }_td">
+										<c:if test="${vo.shZt != 2}">
+											<a href="javascript:changeShZt('${vo.id}')" id="${vo.id }_shZt"><c:out value="${vo.shZtValue}"></c:out></a>
+										</c:if>
+										<c:if test="${vo.shZt == 2}">
+											投票结束
+										</c:if>
+									</td>
 									<td>
-											<a href="${path}/xx/app/console/Sha01/list?shpcId=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">共${vo.a01Count }人</a>
+										<a href="${path}/xx/app/console/Sha01/list?shpcId=${vo.id }&shpcPageNum=${pager.pageNum}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}" class="">共${vo.a01Count }人</a>
 									</td>
 									<td><c:out value="${vo.px}"></c:out></td>
 									<td class="Left_alignment">
@@ -181,8 +188,13 @@
 				},
 				success : function(data){
 					if(data.success){
-						document.getElementById(id+"_shZt").innerHTML  = data.shZtValue;
-						showTip("提示","上会状态成功修改为“"+data.shZtValue+"”",2000);
+					    if(data.shZtValue =="投票结束"){
+                            document.getElementById(id+"_td").innerHTML  = data.shZtValue;
+                        }else{
+                            document.getElementById(id+"_shZt").innerHTML  = data.shZtValue;
+                        }
+
+						showTip("提示","投票状态成功修改为“"+data.shZtValue+"”",2000);
 						//setTimeout(function(){window.location.href = "${path}/xx/app/console/bwh/"},2000);
 					}else{
 						showTip("提示", json.message, 2000);

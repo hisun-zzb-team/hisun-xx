@@ -52,9 +52,9 @@
 						<table class="table table-striped table-bordered table-hover dataTable table-set">
 							<thead>
 								<tr>
+									<th width="10%">批次号</th>
 									<th >批次名称</th>
-									<th width="10%">上会类型</th>
-									<th width="10%">上会时间</th>
+									<th width="10%">投票时间</th>
 									<th width="10%">票决情况</th>
 									<th width="10%">票决结果</th>
 								</tr>
@@ -62,8 +62,8 @@
 							<tbody>
 								<c:forEach items="${pager.datas}" var="vo">
 									<tr style="text-overflow:ellipsis;">
+										<td><c:out value="${vo.pchXx}"></c:out></td>
 										<td><c:out value="${vo.pcmc}"></c:out></td>
-										<td><c:out value="${vo.shlxValue}"></c:out></td>
 										<td><c:out value="${vo.pcsjValue}"></c:out></td>
 										<td><a href="${path}/xx/app/console/tp/list?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&shpcId=${vo.id }" class="">${vo.tpCount }人已投</a></td>
 										<td class="Left_alignment">

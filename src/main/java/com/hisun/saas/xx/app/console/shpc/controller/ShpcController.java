@@ -65,7 +65,7 @@ public class ShpcController extends BaseController {
     @Autowired
     private Sha01Service sha01Service;
 
-    @Value("${upload.absolute.path}")
+    @Value("${sys.upload.absolute.path}")
     private String uploadAbsolutePath;
     @RequestMapping("/")
     public ModelAndView list(HttpServletRequest req, String pId,
@@ -324,10 +324,10 @@ public class ShpcController extends BaseController {
             Shpc shpc = this.shpcService.getByPK(id);
             if(shpc.getShZt()==0){
                 shpc.setShZt(1);
-                shZtValue = "已上会";
-            }else{
-                shpc.setShZt(0);
-                shZtValue = "未上会";
+                shZtValue = "投票中";
+            }else if(shpc.getShZt()==1){
+                shpc.setShZt(2);
+                shZtValue = "投票结束";
             }
             UserLoginDetails userLoginDetails = UserLoginDetailsUtil.getUserLoginDetails();
             BeanTrans.setBaseProperties(shpc, userLoginDetails, "update");

@@ -41,34 +41,58 @@
                             <table class="table table-striped table-bordered table-hover dataTable">
                                 <thead>
                                     <tr>
-                                        <th width="20%" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>姓名</th>
-										<th colspan="3" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">票决结果</th>
-										<th width="20%" style="text-align: center;" rowspan=2>得票率</th>
+										<th width="10px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>序号<br><br><br></th>
+										<th width="50px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>姓名<br><br><br></th>
+										<th width="25px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>性别<br><br><br></th>
+										<th width="50px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>入学年月<br><br><br></th>
+										<th width="120px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>学院名称<br><br><br></th>
+										<th width="120px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>专业名称<br><br><br></th>
+										<th width="50px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>导师姓名<br><br><br></th>
+										<th rowspan=2 style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px"> 论  文  题  目<br><br><br></th>
+										<th colspan="3" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">答辩委员会<br>表决结果</th>
+										<th colspan="3" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">学位评定分委员<br>会表决结果</th>
+										<th width="10px" style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px" rowspan=2>表决意见<br><br></th>
                                     </tr>
 									<tr>
-										<th width="20%"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">同意(票数）</th>
-										<th width="20%"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">不同意(票数）</th>
-										<th width="20%"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">弃权(票数）</th>
+										<th width="20"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">同意</th>
+										<th width="20"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">不同意</th>
+										<th width="20"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">平均分</th>
+										<th width="20"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">同意</th>
+										<th width="20"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">不同意</th>
+										<th width="20"style="text-align: center;border-right-color: rgb(225, 230, 235);border-right-style: solid;border-right-width: 1px">弃权</th>
 									</tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${pager.datas}" var="vo">
+                                    <c:forEach items="${pager}" var="vo">
+
                                         <tr style="text-overflow:ellipsis;">
-											<td width="20%"><c:out value="${vo.xm}"></c:out></td>
-											<td width="20%"><c:out value="${vo.tyCount}"></c:out></td>
-											<td width="20%"><c:out value="${vo.btyCount}"></c:out></td>
-											<td width="20%"><c:out value="${vo.qqCount}"></c:out></td>
-											<td width="20%"><c:out value="${vo.dplCount}%"></c:out></td>
+											<td title="${vo.shyj}"><c:out value="${vo.px}"></c:out></td>
+											<td><c:out value="${vo.xm}"></c:out></td>
+											<td><c:out value="${vo.xb}"></c:out></td>
+											<td><c:out value="${vo.rxsjXx}"></c:out></td>
+											<td title="${vo.xymcXx}"><c:out value="${vo.xymcXx}"></c:out></td>
+											<td title="${vo.zymcXx}"><c:out value="${vo.zymcXx}"></c:out></td>
+											<td title="${vo.dsxmXx}"><c:out value="${vo.dsxmXx}"></c:out></td>
+											<td class="Left_alignment">
+												<a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><c:out value="${vo.tyCount}"></c:out></td>
+											<td><c:out value="${vo.btyCount}"></c:out></td>
+											<td><c:out value="${vo.qqCount}"></c:out></td>
+											<td></td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>
                             </table>
-                            <jsp:include page="/WEB-INF/jsp/common/page.jsp">
-                                <jsp:param value="${pager.total }" name="total"/>
-                                <jsp:param value="${pager.pageCount }" name="endPage"/>
-                                <jsp:param value="${pager.pageSize }" name="pageSize"/>
-                                <jsp:param value="${pager.pageNum }" name="page"/>
-                            </jsp:include>
+                            <%--<jsp:include page="/WEB-INF/jsp/common/page.jsp">--%>
+                                <%--<jsp:param value="${pager.total }" name="total"/>--%>
+                                <%--<jsp:param value="${pager.pageCount }" name="endPage"/>--%>
+                                <%--<jsp:param value="${pager.pageSize }" name="pageSize"/>--%>
+                                <%--<jsp:param value="${pager.pageNum }" name="page"/>--%>
+                            <%--</jsp:include>--%>
                         </div>
                     <%-- 表格结束 --%>
 			</div>
