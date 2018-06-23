@@ -27,8 +27,10 @@ import com.hisun.saas.xx.app.console.shtp.vo.ShtpVo;
 import com.hisun.util.DateUtil;
 import com.hisun.util.WebUtil;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,10 +44,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -67,6 +66,10 @@ public class ShtpController extends BaseController {
     private Sha01Service sha01Service;
     @Resource
     private ShtpsjService shtpsjService;
+
+
+    @Value("${sys.upload.absolute.path}")
+    private String uploadAbsolutePath;
 
     @RequestMapping("/")
     public ModelAndView list(HttpServletRequest req, String pcmc,String pch,
@@ -227,9 +230,10 @@ public class ShtpController extends BaseController {
             Shpc shpc = this.shpcService.getByPK(shpcId);
             String fileName ="“"+ shpc.getPcmc()+"”票决结果";
             response.setContentType("multipart/form-data");
-            response.setHeader("Content-Disposition", "attachment;fileName="+encode(fileName+".xls"));
+            response.setHeader("Content-Disposition", "attachment;fileName="+encode("2017年12月拟授予学位人员表决票最终版.xls"));
             OutputStream output=response.getOutputStream();
-            this.shpcService.exportExcel(fileName,shpcService.getShpcById(shpcId),output);
+            byte[] b = FileUtils.readFileToByteArray(new File(uploadAbsolutePath + File.separator + "xx"+File.separator+"2017年12月拟授予学位人员表决票最终版.xls"));
+            output.write(b);
             output.flush();
             output.close();
         } catch (FileNotFoundException e) {
