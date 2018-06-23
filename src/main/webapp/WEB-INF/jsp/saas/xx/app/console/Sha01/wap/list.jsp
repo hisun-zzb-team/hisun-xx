@@ -160,7 +160,7 @@
 										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
 										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
 
-									<em style="width: 78px;display: inline-block"><c:out value="${vo.lunwenXx}"></c:out></em>
+									<c:out value="${vo.lunwenXx}"></c:out>
 									</td>
 									<td title="${vo.dsxmXx}"
 										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
