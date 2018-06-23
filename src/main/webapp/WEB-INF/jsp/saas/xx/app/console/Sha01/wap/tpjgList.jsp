@@ -223,7 +223,7 @@
 										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
 										<c:out value="${vo.jfxXx}"></c:out></td>
 
-									<td class="Left_alignment"
+									<td title="${vo.lunwenXx}"
 										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
 										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
 										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
