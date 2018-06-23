@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="Select" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/jsp/inc/servlet.jsp" %>
+<%@include file="/WEB-INF/jsp/inc/import.jsp" %>
 <%@taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   ~ Copyright (c) 2018. Hunan Hisun Union Information Technology Co, Ltd. All rights reserved.
@@ -39,66 +40,34 @@
 	</style>
 </head>
 <body>
-<div id="selectTypeModal" class="modal container hide fade" tabindex="-1" data-width="400">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button data-dismiss="modal" class="close"  type="button"></button>
-				<h3 class="modal-title" id="title" >
-					选择批量上传匹配方式
-				</h3>
-			</div>
-			<div class="modal-body" id="dabzAddDiv">
-				<div  style="padding: 15px 0;">
-					<span style="margin-top: 5px; margin-right: 10px; display: inline-block;"><input type="radio" value="1" checked  name="selectType" id="selectTypeByName"  onchange="hiddenSplitDiv(this)">按姓名匹配</span>
-					<span  style="margin-top: 5px; margin-right: 10px; display: inline-block;"><input type="radio" value="0" name="selectType" id="selectTypeByNum" onchange="changeSplitDiv(this)">按序号匹配</span>
-					<span id="splitDiv" style="margin-top: 5px;visibility: hidden">
-						匹配符号<span style="color: red">*</span>
-						<input type="text" class="m-wrap" style="width: 40px" name="split" required maxlength="1" id="split" value="."/>
-					</span>
-				</div>
-
-				<div class="control-group mybutton-group" style="text-align: right;">
-					<button type="button" class="btn green" onclick="uploadBatchFile()"><i class="icon-ok"></i> 确定</button>
-					<button type="button" class="btn btn-default"  data-dismiss="modal"><i class="icon-remove-sign"></i> 取消</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="matchResultModal" class="modal container hide fade" tabindex="-1" data-width="700">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button data-dismiss="modal" class="close"  type="button"></button>
-				<h3 class="modal-title" id="matchResulttitle" >
-					数据包匹配结果
-				</h3>
-			</div>
-			<div class="modal-body" id="matchResultDiv">
-			</div>
-		</div>
-	</div>
-</div>
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12 responsive">
+				<a href="javascript:history.back(-1)">
+					<div style="line-height:36px;color: #FFFFFF;">
+						<table width="100%">
+							<tbody><tr width="100%">
+								<td align="left">   〈</td>
+							</tr>
+							</tbody></table>
+					</div>
+				</a>
 				<%-- 表格开始 --%>
 				<form class=""id="importForm" enctype="multipart/form-data">
 					<div class="portlet-title">
 						<div class="caption">${pchXx} 投票名单</div>
 						<div class="clearfix fr">
-							<a class="btn green" href="javascript:tp('1')">
-								<i class="icon-circle-arrow-down"></i>同意
+							<a class="btn green" style="color: #00BF35;"href="javascript:tp('1')">
+								<i class="icon-ok"></i>同意
 							</a>
-							<a class="btn pink" style="color: #ce00f1;" href="javascript:tp('2')">
-								<i class="icon-circle-arrow-down"></i>不同意
+							<a class="btn pink" style="color: #FF0000;" href="javascript:tp('2')">
+								<i class="icon-remove"></i>不同意
 							</a>
-							<a class="btn gray" style="color: #adabb0;" href="javascript:tp('3')">
-								<i class="icon-circle-arrow-down"></i>弃权
+							<a class="btn gray" style="color: #C0C0C0;" href="javascript:tp('3')">
+								<i class="icon-info-sign"></i>弃权
 							</a>
 							<a href="javascript:ckjg()">
-								<i class="icon-circle-arrow-down"></i>查看投票结果
+								<i class=" icon-search"></i>查看投票结果
 							</a>
 						</div>
 					</div>
@@ -142,22 +111,70 @@
 							</thead>
 							<tbody>
 							<c:forEach items="${datas}" var="vo">
-								<tr style="text-overflow:ellipsis; background-color: <c:if test="${vo.shtpsjVo.tp==1}">#03a14a</c:if><c:if test="${vo.shtpsjVo.tp==2}">#ce00f1</c:if><c:if test="${vo.shtpsjVo.tp==3}">#adabb0</c:if> ;">
-									<td title="${vo.shyj}"><c:out value="${vo.px}"></c:out></td>
-									<td title="${vo.xhXx}"><c:out value="${vo.xhXx}"></c:out></td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
-									<td><c:out value="${vo.xb}"></c:out></td>
-									<td><c:out value="${vo.zzmmXx}"></c:out></td>
-									<td><c:out value="${vo.rxsjXx}"></c:out></td>
-									<td title="${vo.xymcXx}"><c:out value="${vo.xymcXx}"></c:out></td>
-									<td title="${vo.zymcXx}"><c:out value="${vo.zymcXx}"></c:out></td>
-									<td title="${vo.pybXx}"><c:out value="${vo.pybXx}"></c:out></td>
-									<td title="${vo.jfxXx}"><c:out value="${vo.jfxXx}"></c:out></td>
+								<tr style="text-overflow:ellipsis;">
+									<td title="${vo.shyj}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.px}"></c:out></td>
+									<td title="${vo.xhXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.xhXx}"></c:out></td>
+									<td
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
+									<td
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.xb}"></c:out></td>
+									<td
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.zzmmXx}"></c:out></td>
+									<td
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.rxsjXx}"></c:out></td>
+									<td title="${vo.xymcXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.xymcXx}"></c:out></td>
+									<td title="${vo.zymcXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.zymcXx}"></c:out></td>
+									<td title="${vo.pybXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.pybXx}"></c:out></td>
+									<td title="${vo.jfxXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.jfxXx}"></c:out></td>
 
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
+									<td class="Left_alignment"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+
+									<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
 									</td>
-									<td title="${vo.dsxmXx}"><c:out value="${vo.dsxmXx}"></c:out></td>
+									<td title="${vo.dsxmXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.dsxmXx}"></c:out></td>
 									<td><input type="checkbox" onchange="checkChange(this)" value="${vo.id }"/></td>
 								</tr>
 							</c:forEach>

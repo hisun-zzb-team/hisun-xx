@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/jsp/inc/servlet.jsp" %>
+<%@include file="/WEB-INF/jsp/inc/import.jsp" %>
 <%@taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   ~ Copyright (c) 2018. Hunan Hisun Union Information Technology Co, Ltd. All rights reserved.
@@ -25,6 +26,15 @@
 
 		<div class="row-fluid">
 			<div class="span12 responsive">
+				<a href="javascript:history.back(-1)">
+					<div style="line-height:36px;color: #FFFFFF;">
+						<table width="100%">
+							<tbody><tr width="100%">
+								<td align="left">   〈</td>
+							</tr>
+							</tbody></table>
+					</div>
+				</a>
 				<%-- 表格开始 --%>
 				<div class="portlet box grey">
 					<div class="portlet-title">

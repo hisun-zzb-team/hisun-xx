@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="Select" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/jsp/inc/servlet.jsp" %>
+<%@include file="/WEB-INF/jsp/inc/import.jsp" %>
 <%@taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   ~ Copyright (c) 2018. Hunan Hisun Union Information Technology Co, Ltd. All rights reserved.
@@ -83,19 +84,28 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12 responsive">
+				<a href="javascript:history.back(-1)">
+					<div style="line-height:36px;color: #FFFFFF;">
+						<table width="100%">
+							<tbody><tr width="100%">
+								<td align="left">   〈</td>
+							</tr>
+							</tbody></table>
+					</div>
+				</a>
 				<%-- 表格开始 --%>
 				<form class=""id="importForm" enctype="multipart/form-data">
 					<div class="portlet-title">
 						<div class="caption">20180611 投票结果</div>
 						<div class="clearfix fr">
-							<a class="btn green" href="javascript:tp('1')">
-								<i class="icon-circle-arrow-down"></i>同意
+							<a class="btn green" style="color: #00BF35;"href="javascript:tp('1')">
+								<i class="icon-ok"></i>同意
 							</a>
-							<a class="btn pink" style="color: #ce00f1;" href="javascript:tp('2')">
-								<i class="icon-circle-arrow-down"></i>不同意
+							<a class="btn pink" style="color: #FF0000;" href="javascript:tp('2')">
+								<i class="icon-remove"></i>不同意
 							</a>
-							<a class="btn gray" style="color: #adabb0;" href="javascript:tp('3')">
-								<i class="icon-circle-arrow-down"></i>弃权
+							<a class="btn gray" style="color: #C0C0C0;" href="javascript:tp('3')">
+								<i class="icon-info-sign"></i>弃权
 							</a>
 						</div>
 						<div class="clearfix">
@@ -151,21 +161,68 @@
 							<tbody>
 							<c:forEach items="${datas}" var="vo">
 								<tr style="text-overflow:ellipsis; background-color: <c:if test="${vo.shtpsjVo.tp==1}">#03a14a</c:if><c:if test="${vo.shtpsjVo.tp==2}">#ce00f1</c:if><c:if test="${vo.shtpsjVo.tp==3}">#adabb0</c:if> ;">
-									<td title="${vo.shyj}"><c:out value="${vo.px}"></c:out></td>
-									<td title="${vo.xhXx}"><c:out value="${vo.xhXx}"></c:out></td>
-									<td><a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
-									<td><c:out value="${vo.xb}"></c:out></td>
-									<td><c:out value="${vo.zzmmXx}"></c:out></td>
-									<td><c:out value="${vo.rxsjXx}"></c:out></td>
-									<td title="${vo.xymcXx}"><c:out value="${vo.xymcXx}"></c:out></td>
-									<td title="${vo.zymcXx}"><c:out value="${vo.zymcXx}"></c:out></td>
-									<td title="${vo.pybXx}"><c:out value="${vo.pybXx}"></c:out></td>
-									<td title="${vo.jfxXx}"><c:out value="${vo.jfxXx}"></c:out></td>
+									<td title="${vo.shyj}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.px}"></c:out></td>
+									<td title="${vo.xhXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.xhXx}"></c:out></td>
+									<td
+											<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<a href="${path}/xx/app/console/Sha01/view?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}&id=${vo.id }&shpcPageNum=${shpcPageNum}&a01PageNum=${pager.pageNum}"><c:out value="${vo.xm}"></c:out></a></td>
+									<td
+											<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.xb}"></c:out></td>
+									<td
+											<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.zzmmXx}"></c:out></td>
+									<td
+											<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+											<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.rxsjXx}"></c:out></td>
+									<td title="${vo.xymcXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.xymcXx}"></c:out></td>
+									<td title="${vo.zymcXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.zymcXx}"></c:out></td>
+									<td title="${vo.pybXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.pybXx}"></c:out></td>
+									<td title="${vo.jfxXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.jfxXx}"></c:out></td>
 
-									<td class="Left_alignment">
-										<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
+									<td class="Left_alignment"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+									<em style="width: 78px;display: inline-block"><a href="javascript:gbrmspbDown('${vo.id }')" class=""><c:out value="${vo.lunwenXx}"></c:out></a></em>
 									</td>
-									<td title="${vo.dsxmXx}"><c:out value="${vo.dsxmXx}"></c:out></td>
+									<td title="${vo.dsxmXx}"
+										<c:if test="${vo.shtpsjVo.tp eq 1}">style="color: #00BF35"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 2}">style="color: #FF0000"</c:if>
+										<c:if test="${vo.shtpsjVo.tp eq 3}">style="color: #C0C0C0"</c:if>>
+										<c:out value="${vo.dsxmXx}"></c:out></td>
 									<td><input type="checkbox" onchange="checkChange(this)" value="${vo.id }"/></td>
 								</tr>
 							</c:forEach>
