@@ -301,7 +301,7 @@ public class Sha01Controller extends BaseController {
     }
 
     @RequestMapping(value = "/un/wap/hypcList")
-    public ModelAndView list(HttpServletRequest req, String pId,
+    public ModelAndView list(HttpServletRequest req,
                              @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
                              @RequestParam(value = "pageSize" ,required=false) String pageSize) throws GenericException {
         Map<String, Object> map = new HashMap<String, Object>();
@@ -328,6 +328,7 @@ public class Sha01Controller extends BaseController {
             CommonConditionQuery query = new CommonConditionQuery();
             // query.add(CommonRestrictions.and(" shlx = :shlx", "shlx", Shpc.SHLX_BWH));
             query.add(CommonRestrictions.and(" tombstone = :tombstone", "tombstone", 0));
+            query.add(CommonRestrictions.and(" shZt = :shZt", "shZt", 2));
             CommonOrderBy orderBy = new CommonOrderBy();
             orderBy.add(CommonOrder.asc("px"));
 
@@ -387,7 +388,9 @@ public class Sha01Controller extends BaseController {
                 }
                 sha01Vos.add(sha01Vo);
             }
+            Shpc shpc = this.shpcService.getByPK(shpcId);
             map.put("shpcId", shpcId);
+            map.put("pchXx", shpc.getPchXx());
             map.put("xmQuery", xmQuery);
             map.put("datas", sha01Vos);
             map.put("noFileQuert", noFileQuert);

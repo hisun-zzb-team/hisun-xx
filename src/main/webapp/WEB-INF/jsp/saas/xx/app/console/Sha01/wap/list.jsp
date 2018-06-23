@@ -86,7 +86,7 @@
 				<%-- 表格开始 --%>
 				<form class=""id="importForm" enctype="multipart/form-data">
 					<div class="portlet-title">
-						<div class="caption">20180611 投票名单</div>
+						<div class="caption">${pchXx} 投票名单</div>
 						<div class="clearfix fr">
 							<a class="btn green" href="javascript:tp('1')">
 								<i class="icon-circle-arrow-down"></i>同意
