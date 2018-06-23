@@ -26,21 +26,16 @@
 
 		<div class="row-fluid">
 			<div class="span12 responsive">
-				<a href="javascript:history.back(-1)">
-					<div style="line-height:36px;color: #FFFFFF;">
-						<table width="100%">
-							<tbody><tr width="100%">
-								<td align="left">   〈</td>
-							</tr>
-							</tbody></table>
-					</div>
-				</a>
 				<%-- 表格开始 --%>
 				<div class="portlet box grey">
 					<div class="portlet-title">
 						<div class="caption">学位会批次</div>
+						<div class="clearfix fr">
+							<a class="btn" href="javascript:returnList()"><i class="icon-undo"></i>返回</a>
+						</div>
 					</div>
 					<form action="" class="form-horizontal" id="form1" method="post">
+
 					<div class="portlet-body">
 						<table class="table table-striped table-bordered table-hover dataTable table-set">
 							<thead>
@@ -144,6 +139,11 @@
 				}
 			});
 		};
+
+		function returnList(){
+            window.location.href ="${path }/dashboard?OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}";
+		}
+
 		function changeShZt(id){
 			$.cloudAjax({
 				path : '${path}',

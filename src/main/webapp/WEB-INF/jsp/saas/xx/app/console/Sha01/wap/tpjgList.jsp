@@ -295,6 +295,10 @@
             window.location.href ="${path }/xx/app/console/Sha01/un/wap/jgList?shpcId=${shpcId}&tp="+tp+"&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}";
         }
 
+        function returnList(){
+            window.location.href ="${path }/xx/app/console/Sha01/un/wap/list?shpcId=${shpcId}&OWASP_CSRFTOKEN=${sessionScope.OWASP_CSRFTOKEN}";
+        }
+
 
 	</script>
 </body>
